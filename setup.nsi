@@ -59,7 +59,7 @@ Var LibInstall
 !insertmacro MUI_LANGUAGE Portuguese
 
 # Installer attributes
-OutFile C:\qrest-release-build\qrest-0.5.0-setup.exe
+OutFile C:\qrest-release-build\qrest-${VERSION}-setup.exe
 InstallDir Qrest
 CRCCheck on
 XPStyle on
