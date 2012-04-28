@@ -54,6 +54,9 @@ Var LibInstall
 
 # Installer languages
 !insertmacro MUI_LANGUAGE French
+!insertmacro MUI_LANGUAGE English
+!insertmacro MUI_LANGUAGE Spanish
+!insertmacro MUI_LANGUAGE Portuguese
 
 # Installer attributes
 OutFile C:\qrest-release-build\qrest-0.5.0-setup.exe
