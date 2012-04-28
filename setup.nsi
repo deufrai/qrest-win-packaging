@@ -6,7 +6,8 @@ Name Qrest
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
 !define VERSION 0.5.0
-!define COMPANY qrest.org
+!define COMPANY wardsback
+!define PRODUCT qrest
 !define URL http://www.qrest.org
 
 # MultiUser Symbol Definitions
@@ -20,7 +21,7 @@ Name Qrest
 !define MULTIUSER_INSTALLMODE_INSTDIR_REGISTRY_VALUE "Path"
 
 # MUI Symbol Definitions
-!define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\modern-install-colorful.ico"
+!define MUI_ICON "C:\qrest-release-build\resources\pix\qresticon.ico"
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_STARTMENUPAGE_REGISTRY_ROOT HKLM
 !define MUI_STARTMENUPAGE_NODISABLE
@@ -28,7 +29,7 @@ Name Qrest
 !define MUI_STARTMENUPAGE_REGISTRY_VALUENAME StartMenuGroup
 !define MUI_STARTMENUPAGE_DEFAULTFOLDER Qrest
 !define MUI_FINISHPAGE_RUN $INSTDIR\qrest.exe
-!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\modern-uninstall-colorful.ico"
+!define MUI_UNICON "C:\qrest-release-build\resources\pix\qresticon.ico"
 !define MUI_UNFINISHPAGE_NOAUTOCLOSE
 
 # Included files
@@ -149,6 +150,10 @@ Section /o -un.Main UNSEC0000
     !insertmacro UnInstallLib DLL SHARED REBOOT_PROTECTED $INSTDIR\QtGui4.dll
 
     DeleteRegValue HKLM "${REGKEY}\Components" Main
+    
+    # cleaning registry from written qrest settings
+    DeleteRegKey HKCU "software\${COMPANY}\${PRODUCT}"
+    
 SectionEnd
 
 Section -un.post UNSEC0001
