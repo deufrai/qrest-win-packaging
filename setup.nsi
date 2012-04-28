@@ -95,7 +95,7 @@ Section -Main SEC0000
     !insertmacro InstallLib DLL $LibInstall REBOOT_PROTECTED C:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\mingwm10.dll $SYSDIR\mingwm10.dll $INSTDIR
 
     # Installing library C:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtGui4.dll
-    !insertmacro InstallLib DLL $LibInstall REBOOT_PROTECTED C:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtGui4.dll $INSTDIR\QtGui4.dll $INSTDIR
+    !insertmacro InstallLib DLL $LibInstall REBOOT_PROTECTED C:\QtSDK\Desktop\Qt\4.8.0\mingw\bin\QtGui4.dll $SYSDIR\QtGui4.dll $INSTDIR
 
     WriteRegStr HKLM "${REGKEY}\Components" Main 1
 SectionEnd
