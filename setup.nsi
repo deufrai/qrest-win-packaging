@@ -5,7 +5,7 @@ Name Qrest
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.5.0
+!define VERSION 0.6.0-beta-1
 !define COMPANY wardsback
 !define PRODUCT qrest
 !define URL http://www.qrest.org
